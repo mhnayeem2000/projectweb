@@ -21,7 +21,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
         $stmt->bind_param("ssssss", $firstName, $lastName, $gender, $email, $password, $phone);
 
         if ($stmt->execute()) {
-            echo "Registration successful...";
+            header("Location: success.php");
         } else {
             echo "Execution Failed: " . $stmt->error;
         }
